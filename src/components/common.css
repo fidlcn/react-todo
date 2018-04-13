@@ -1,0 +1,68 @@
+.inputArea{
+    box-sizing: border-box;
+    padding: 10px;
+}
+#titleInput{
+    margin-top: 10px;
+}
+
+.ulList{
+    list-style-type: none;
+    background-color: rgb(218, 202, 184);
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+.ulList li{
+    margin: 10px 0;
+    border-radius: 5px;
+    min-height: 80px;
+    border: solid 1px rgb(180, 149, 149);
+    background-color: rgb(226, 226, 202);
+    display: flex;
+}
+.ulList li span{
+    height: 78px;
+    width: 40px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 70px;
+    background-color: #ced0b8;
+}
+.ulDiv{
+    height: 78px;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 5px;
+    flex-grow: 1;
+}
+.ulBtn{
+    height: 78px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ulBtn input{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: solid 1px;
+    outline: none;
+    box-shadow: 0px 2px 2px 0px #735d5d;
+    font-weight: bold;
+    color:gray;
+}
+.ulBtn input:active{
+    box-shadow: inset 0 1px 2px black;
+    color: rgb(190, 190, 57);
+}
+
+.canChange{
+    opacity: 0;
+}
+.unChange{
+    opacity: 0.5;
+}
