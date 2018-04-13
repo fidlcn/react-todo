@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+  height: 100%;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  overflow: hidden;
+}
+
+.App-title {
+  width: 122px;
+  overflow: hidden;
+  display: inline-block;
+  font-size: 1.2em;
+  font-family: serif;
+  color: white;
+  position: absolute;
+  animation: scollP infinite 20s linear;
+}
+
+@keyframes scollP{
+  0% { left:-200px;color:rgb(9, 173, 3); }
+  100% { left:100%;color:rgb(10, 238, 112); }
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#root{
+  height: 100%;
+}
+
+.todoBox{
+  display: flex;
+  flex-direction: row;
+  height:100% ;
+  margin-top: -50px;
+  padding-top: 50px;
+}
+.Add{
+  flex-grow: 1;
+  background-color: wheat;
+  width: 120px;
+}
+.content{
+  flex-grow: 5;
+  background-color: thistle;
+}
