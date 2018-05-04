@@ -8,6 +8,7 @@ class Content extends Component{
         super(props);
         this.state = { set:[this.props.states.set[0]]};
         this.handleBtnStatusChange = this.handleBtnStatusChange.bind(this);
+        this.handleCloseStatus = this.handleCloseStatus.bind(this);
     }
     
     componentWillReceiveProps(nextProps) {
@@ -19,8 +20,19 @@ class Content extends Component{
             }
         }
     }
-    handleBtnStatusChange(e){
-       console.log(e.target)
+    handleCloseStatus(i){
+        let clock = this.state.set;
+        clock[i].isOn = false;
+        this.setState({
+            isOn:clock
+        })
+    }
+    handleBtnStatusChange(i){
+        let clock = this.state.set;
+        clock[i].isOn = true;
+        this.setState({
+            isOn:clock
+        })
     }
     render(){
         let items = {};
@@ -36,7 +48,7 @@ class Content extends Component{
                     items.set.map((item,i)=>{
                         let isOn = item.isOn;
                         return (
-                            <li key={i} >
+                            <li key={i} className={ isOn ? 'yes' : 'no' }>
                                 <span>{i+1}</span>
                                 <div className='ulDiv'>
                                     <h3>{item.title}</h3>
@@ -44,10 +56,10 @@ class Content extends Component{
                                 </div>
                                 <div className='ulBtn'>
                                     {isOn ? (
-                                        <input type="button" value="Y" />):(
-                                        <input type="button" value="Y" disabled />
+                                        <input type="button" onClick={()=>this.handleCloseStatus(i)} value="Y" />):(
+                                        <input type="button" className='graybtn' value="Y" disabled />
                                     )}
-                                    <input type='button'  value="N" onClick={this.handleBtnStatusChange} />
+                                    <input type='button'  value="N" onClick={ ()=>this.handleBtnStatusChange(i)} />
                                 </div>
                             </li>
                         )
